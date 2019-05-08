@@ -1,0 +1,1 @@
+module.exports = [process.argv[2],`${process.argv[2]}/src`, `${process.argv[2]}/dist`, `${process.argv[2]}/node_modules`];
