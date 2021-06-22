@@ -1,0 +1,25 @@
+{
+  "name": "react-boiler-custom",
+  "version": "1.0.1",
+  "description": "A Simple Webpack Babel Config to setup a React App",
+  "main": "src/index.js",
+  "bin": "src/index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "react",
+    "boilerplate",
+    "reactjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ARogueOtaku/react-boiler.git"
+  },
+  "author": "Amit Das",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ARogueOtaku/react-boiler/issues"
+  },
+  "homepage": "https://github.com/ARogueOtaku/react-boiler#readme"
+}
