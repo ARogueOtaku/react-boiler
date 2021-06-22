@@ -17,7 +17,7 @@
     "url": "git+https://github.com/ARogueOtaku/react-boiler.git"
   },
   "author": "Amit Das",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ARogueOtaku/react-boiler/issues"
   },

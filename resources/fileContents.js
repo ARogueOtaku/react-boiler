@@ -11,7 +11,7 @@ function getPackageJsonContents(appName, authorName) {
       },
       keywords: [],
       author: authorName,
-      license: "ISC",
+      license: "MIT",
       dependencies: {
         react: "^16.8.6",
         "react-dom": "^16.8.6",
