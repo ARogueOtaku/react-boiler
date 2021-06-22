@@ -1,31 +1,38 @@
-var packageJsonContents = JSON.stringify({
-    "name": "react-app",
-    "version": "1.0.0",
-    "description": "React Custom Boiler",
-    "main": "src/index.js",
-    "scripts": {
-        "build": "webpack --mode production",
-        "start": "webpack-dev-server --config webpack.config.js --hot --open --contentBase dist"
+function getPackageJsonContents(appName, authorName) {
+  return JSON.stringify(
+    {
+      name: appName,
+      version: "1.0.0",
+      description: "An awesome reactjs app called " + appName,
+      main: "src/index.js",
+      scripts: {
+        build: "webpack --mode production",
+        start: "webpack-dev-server --config webpack.config.js --hot --open --contentBase dist",
+      },
+      keywords: [],
+      author: authorName,
+      license: "ISC",
+      dependencies: {
+        react: "^16.8.6",
+        "react-dom": "^16.8.6",
+      },
+      devDependencies: {
+        "@babel/core": "7.4.4",
+        "@babel/preset-env": "7.4.4",
+        "@babel/preset-react": "7.0.0",
+        webpack: "4.30.0",
+        "webpack-cli": "3.3.2",
+        "webpack-dev-server": "3.3.1",
+        "babel-loader": "8.0.5",
+      },
     },
-    "keywords": [],
-    "author": "Amit Das",
-    "license": "MIT",
-    "dependencies": {
-      "react": "^16.8.6",
-      "react-dom": "^16.8.6"
-    },
-    "devDependencies": {
-      "@babel/core": "7.4.4",
-      "@babel/preset-env": "7.4.4",
-      "@babel/preset-react": "7.0.0",
-      "webpack": "4.30.0",
-      "webpack-cli": "3.3.2",
-      "webpack-dev-server": "3.3.1",
-      "babel-loader": "8.0.5"
-    }
-  }, null, 4);
+    null,
+    4
+  );
+}
 
-var webpackConfigContents = `const path = require('path');
+function getWebpackConfigContents() {
+  return `const path = require('path');
 module.exports = {
     "entry": "./src/script.js",
     "output":{
@@ -45,34 +52,40 @@ module.exports = {
             ]
     }
 }`;
+}
 
-var htmlContents = `<!DOCTYPE html>
+function getHtmlContents(appName) {
+  return `<!DOCTYPE html>
 <html>
     <head>
-        <title>React Boiler</title>
+        <title>${appName}</title>
     </head>
     <body>
         <div id="app"></div>
         <script src = 'main.js'></script>
     </body>
-</html>`
+</html>`;
+}
 
-var scriptContents = `import React from 'react';
+function getScriptContents(appName, authorName) {
+  return `import React from 'react';
 import ReactDOM from 'react-dom';
 
 const App = () =>{
     return(
         <div>
-            <h1>It's working!!!</h1>
+            <h1>${appName}</h1>
+            <h6>by ${authorName}</h6>
         </div>
     )
 }
 
-ReactDOM.render(<App />, document.querySelector('#app'));`
+ReactDOM.render(<App />, document.querySelector('#app'));`;
+}
 
 module.exports = {
-    packageJsonContents,
-    webpackConfigContents,
-    htmlContents,
-    scriptContents
-}
+  getHtmlContents,
+  getPackageJsonContents,
+  getWebpackConfigContents,
+  getScriptContents,
+};

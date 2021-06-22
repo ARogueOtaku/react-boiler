@@ -1,1 +1,5 @@
-module.exports = [process.argv[2],`${process.argv[2]}/src`, `${process.argv[2]}/dist`, `${process.argv[2]}/node_modules`];
+function getFolders(appName) {
+  return [appName, `${appName}/src`, `${appName}/dist`, `${appName}/node_modules`];
+}
+
+module.exports = getFolders;
