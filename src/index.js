@@ -47,4 +47,4 @@ console.log("|-webpack.config.js");
 console.log("|-package.json");
 console.log("=============================");
 console.log("All Complete! :)");
-console.log(`Please run "cd ${appName}" and then "npm install" before staring the App.`);
+console.log(`Please run "cd ${appName}" and then "npm install" before starting the App.`);
